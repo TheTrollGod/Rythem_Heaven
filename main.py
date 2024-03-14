@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 from discord.ext import commands
-from discord_slash import SlashCommand
+from discord_interactions import InteractionsClient
 import youtube_dl
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
@@ -10,9 +10,8 @@ from spotipy.oauth2 import SpotifyClientCredentials
 dotenv_path = "./creds.env"
 load_dotenv()
 
-# Set up Discord bot with slash commands
-bot = commands.Bot(command_prefix='/', intents=discord.Intents.default())
-slash = SlashCommand(bot, sync_commands=True)
+# Set up Discord bot with interactions
+bot = InteractionsClient()
 
 # Set up YouTube downloader
 ydl_opts = {
@@ -28,11 +27,7 @@ ydl_opts = {
 sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials())
 
 # Command to play a YouTube video
-@slash.slash(name="youtube", description="Play a YouTube video", options=[{
-    "name": "query",
-    "description": "Search query or URL of the video",
-    "type": 3
-}])
+@bot.command(name="youtube", description="Play a YouTube video")
 async def play(ctx, query: str):
     youtube_api_key = os.getenv('YOUTUBE_API_KEY')
     voice_channel = ctx.author.voice.channel
@@ -47,11 +42,7 @@ async def play(ctx, query: str):
     voice_client.source.volume = 0.5
 
 # Command to play a Spotify track
-@slash.slash(name="spotify", description="Play a Spotify track", options=[{
-    "name": "track_uri",
-    "description": "Spotify track URI",
-    "type": 3
-}])
+@bot.command(name="spotify", description="Play a Spotify track")
 async def spotify(ctx, track_uri: str):
     voice_channel = ctx.author.voice.channel
     voice_client = await voice_channel.connect()
