@@ -1,9 +1,9 @@
-## A bot that replaces Rythem
+# A bot that replaces Rythem
 This bot uses slash commands to play youtube videos and play spotify songs.
 Still a WIP
 
 
-# How to get a Discord token
+## How to get a Discord token
 https://discord.com/developers/applications
 To get a Discord bot token, you need to create a new bot application on the Discord Developer Portal and obtain the token associated with it. Here's a step-by-step guide on how to do it:
 
@@ -22,7 +22,7 @@ Use the token: Now that you have obtained your bot token, you can use it to auth
 
 
 
-# How to get a Youtube API Key
+## How to get a Youtube API Key
 To obtain a YouTube API key, you need to create a project in the Google Cloud Console and enable the YouTube Data API v3 for that project. Here's a step-by-step guide on how to do it:
 
 Go to the Google Cloud Console: Open your web browser and go to the Google Cloud Console.
@@ -44,7 +44,7 @@ Restrict the API key (optional): For security reasons, you may want to restrict 
 Use the API key: Now that you have obtained your API key, you can use it in your applications to access the YouTube Data API v3.
 
 
-# How to get Spotipy Id and Secret
+## How to get Spotipy Id and Secret
 https://developer.spotify.com/dashboard
 To create a Spotify client ID and secret, you need to register your application with the Spotify Developer Dashboard. Here's a step-by-step guide on how to do it:
 
