@@ -1,3 +1,8 @@
+## A bot that replaces Rythem
+This bot uses slash commands to play youtube videos and play spotify songs.
+Still a WIP
+
+
 # How to get a Discord token
 https://discord.com/developers/applications
 To get a Discord bot token, you need to create a new bot application on the Discord Developer Portal and obtain the token associated with it. Here's a step-by-step guide on how to do it:
